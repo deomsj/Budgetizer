@@ -1,13 +1,53 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.App {
+  display: flex;
+}
+
+main {
+  text-align: center;
+  margin-top: 64px;
+  width: 100%;
+  height: calc(100vh - 64px);
+}
+
+form.login {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  flex-grow: 1;
+}
+
+button.login__button {
+  margin-top: 40px;
+}
+
+.MuiListItem-button {
+  cursor: pointer;
+}
+
+th > span {
+  width: 100%;
+  justify-content: space-between !important;
+}
+
+@media (min-width: 600px) {
+  .MuiTableRow-root:not(:hover) button {
+    opacity: 0.3;
+  }
 }

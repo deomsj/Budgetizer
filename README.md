@@ -9,11 +9,16 @@ This is a simple budgeting application to help users track they’re spending.
 The application will be able to:
 
 - create and manage multiple users
-- add/edit/delete transactions
+- display transactions in table
+- add transactions
+- sort tabular transaction data
 - persist transactions across browser sessions
-- filter and sort transaction data
-- graphical display of transactions
-- upload bulk transaction csv files
+- delete transactions
+- edit transactions
+- meaningful graphical display of transactions
+- bulk upload transactions from a csv file
+- download transactions data to csv
+- filter tabular transaction data
 
 ## Data Models
 
