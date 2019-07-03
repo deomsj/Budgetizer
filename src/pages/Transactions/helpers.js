@@ -35,10 +35,10 @@ export const filterTransactionsBy = filter => transaction => {
     return combined.includes(filter.toLowerCase());
   } else {
     // if filter text includes commas, then match all filters
-    const filters = filter.split(', ');
+    const filters = filter.split(',');
     let match = true;
     for (let i = 0; i < filters.length; i++) {
-      if (!combined.includes(filters[i].toLowerCase())) {
+      if (!combined.includes(filters[i].toLowerCase().trim())) {
         match = false;
       }
     }
