@@ -1,4 +1,5 @@
 import React from 'react';
+import * as types from 'types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -49,6 +50,10 @@ const NavBar = ({ user }) => {
 };
 
 export default NavBar;
+
+NavBar.propTypes = {
+  user: types.user,
+};
 
 const useStyles = makeStyles(theme => ({
   menuButton: {

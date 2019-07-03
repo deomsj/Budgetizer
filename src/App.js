@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import Navbar from './nav/index';
 import Main from './pages';
@@ -65,3 +66,9 @@ const App = ({ history }) => {
 };
 
 export default withRouter(App);
+
+App.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};

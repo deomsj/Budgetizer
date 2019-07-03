@@ -1,4 +1,5 @@
 import React from 'react';
+import * as types from 'types';
 import { makeStyles } from '@material-ui/core/styles';
 import { unparse } from 'papaparse';
 import Paper from '@material-ui/core/Paper';
@@ -42,6 +43,11 @@ const Download = ({ transactions, user }) => {
 };
 
 export default Download;
+
+Download.propTypes = {
+  user: types.user.isRequired,
+  transactions: types.transactions.isRequired,
+};
 
 const useStyles = makeStyles(theme => ({
   paper: {

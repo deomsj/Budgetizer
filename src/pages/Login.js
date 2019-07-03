@@ -1,6 +1,7 @@
 import React from 'react';
+import * as types from 'types';
 import Button from '@material-ui/core/Button';
-import { OutlinedInput, useTextInput } from '../shared/TextInput.js';
+import { OutlinedInput, useTextInput } from 'shared/TextInput.js';
 
 const Login = ({ user, actions }) => {
   if (user) actions.logout();
@@ -15,7 +16,6 @@ const Login = ({ user, actions }) => {
   return (
     <form className='login' noValidate autoComplete='off'>
       <OutlinedInput
-        id='firstName'
         label='First Name'
         value={firstName}
         onChange={setFirstName}
@@ -23,14 +23,12 @@ const Login = ({ user, actions }) => {
         autoFocus
       />
       <OutlinedInput
-        id='lastName'
         label='Last Name'
         value={lastName}
         onChange={setLastName}
         placeholder='Last'
       />
       <OutlinedInput
-        id='dob'
         label='Date of Birth'
         value={dob}
         onChange={setDob}
@@ -48,3 +46,8 @@ const Login = ({ user, actions }) => {
 };
 
 export default Login;
+
+Login.propTypes = {
+  user: types.user,
+  actions: types.actions,
+};

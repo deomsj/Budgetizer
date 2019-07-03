@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import * as types from 'types';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -9,7 +9,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Slide from '@material-ui/core/Slide';
+import { TransitionDown, useStyles } from './helpers';
 
 const DeleteTransaction = ({ transaction, actions }) => {
   const classes = useStyles();
@@ -35,7 +35,7 @@ const DeleteTransaction = ({ transaction, actions }) => {
       </Tooltip>
       <Dialog
         open={isOpen}
-        TransitionComponent={Transition}
+        TransitionComponent={TransitionDown}
         onClose={closeDialog}>
         <DialogTitle>Delete transaction</DialogTitle>
         <DialogContent className={classes.dialogContent}>
@@ -69,19 +69,7 @@ const DeleteTransaction = ({ transaction, actions }) => {
 
 export default DeleteTransaction;
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction='up' ref={ref} {...props} />;
-});
-
-const useStyles = makeStyles(theme => ({
-  dialogContent: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '300px',
-    padding: '0 20px',
-  },
-  trigger: {
-    marginRight: theme.spacing(2),
-    marginLeft: theme.spacing(2),
-  },
-}));
+DeleteTransaction.propTypes = {
+  actions: types.actions.isRequired,
+  transaction: types.transaction.isRequired,
+};

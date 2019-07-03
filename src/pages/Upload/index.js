@@ -1,4 +1,5 @@
 import React from 'react';
+import * as types from 'types';
 import { makeStyles } from '@material-ui/core/styles';
 import CSVReader from 'react-csv-reader';
 import Paper from '@material-ui/core/Paper';
@@ -60,6 +61,11 @@ const Upload = ({ actions, user }) => {
 };
 
 export default Upload;
+
+Upload.propTypes = {
+  user: types.user.isRequired,
+  actions: types.actions.isRequired,
+};
 
 const useStyles = makeStyles(theme => ({
   paper: {

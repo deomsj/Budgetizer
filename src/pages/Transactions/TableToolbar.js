@@ -1,10 +1,10 @@
 import React from 'react';
+import * as types from 'types';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AddTransaction from './Modals/AddTransaction';
-import { UnderlinedInput } from '../../shared/TextInput';
+import { UnderlinedInput } from 'shared/TextInput';
 
 const TableToolbar = ({ actions, user, filter, setFilter, noData }) => {
   const classes = useToolbarStyles();
@@ -35,9 +35,11 @@ const TableToolbar = ({ actions, user, filter, setFilter, noData }) => {
 };
 
 TableToolbar.propTypes = {
-  actions: PropTypes.shape({
-    addTransaction: PropTypes.func.isRequired,
-  }),
+  actions: types.actions.isRequired,
+  user: types.user.isRequired,
+  filter: types.PropTypes.string.isRequired,
+  setFilter: types.PropTypes.func.isRequired,
+  noData: types.PropTypes.bool.isRequired,
 };
 
 export default TableToolbar;

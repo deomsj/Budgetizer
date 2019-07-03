@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import * as types from 'types';
 import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -9,11 +9,11 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Slide from '@material-ui/core/Slide';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-import { OutlinedInput, useTextInput } from '../../../shared/TextInput';
+import { OutlinedInput, useTextInput } from 'shared/TextInput';
 import { DatePicker } from '@material-ui/pickers';
+import { TransitionUp, useStyles } from './helpers';
 
 const AddTransaction = ({ user, actions }) => {
   const classes = useStyles();
@@ -68,7 +68,7 @@ const AddTransaction = ({ user, actions }) => {
       </Tooltip>
       <Dialog
         open={isOpen}
-        TransitionComponent={Transition}
+        TransitionComponent={TransitionUp}
         onClose={closeDialog}>
         <DialogTitle>New transaction</DialogTitle>
         <DialogContent className={classes.dialogContent}>
@@ -139,18 +139,7 @@ const AddTransaction = ({ user, actions }) => {
 
 export default AddTransaction;
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction='down' ref={ref} {...props} />;
-});
-
-const useStyles = makeStyles(() => ({
-  dialogContent: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '300px',
-    padding: '0 20px',
-  },
-  switchContainer: {
-    justifyContent: 'center',
-  },
-}));
+AddTransaction.propTypes = {
+  user: types.user.isRequired,
+  actions: types.actions.isRequired,
+};

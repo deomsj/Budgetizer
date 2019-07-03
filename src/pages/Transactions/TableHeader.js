@@ -6,12 +6,8 @@ import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import headerRows from './headerRows';
 
-const TableHeader = props => {
-  const { order, orderBy, onRequestSort } = props;
-
-  const createSortHandler = property => event => {
-    onRequestSort(event, property);
-  };
+const TableHeader = ({ order, orderBy, onRequestSort }) => {
+  const createSortHandler = property => event => onRequestSort(event, property);
 
   return (
     <TableHead>
@@ -34,10 +30,10 @@ const TableHeader = props => {
   );
 };
 
+export default TableHeader;
+
 TableHeader.propTypes = {
   onRequestSort: PropTypes.func.isRequired,
   order: PropTypes.string.isRequired,
   orderBy: PropTypes.string.isRequired,
 };
-
-export default TableHeader;

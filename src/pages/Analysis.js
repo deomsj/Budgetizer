@@ -1,4 +1,5 @@
 import React from 'react';
+import * as types from 'types';
 import Chart from 'react-google-charts';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -58,7 +59,7 @@ const Analysis = ({ user, transactions }) => {
       <Chart
         width={'100%'}
         height={'80%'}
-        chartType='AreaChart'
+        chartType='ComboChart'
         data={dailyExpenditures}
         options={{
           title: 'Daily Spending',
@@ -70,7 +71,8 @@ const Analysis = ({ user, transactions }) => {
           },
           // For the legend to fit, we make the chart area smaller
           chartArea: { width: '50%', height: '70%' },
-          // lineWidth: 25
+          seriesType: 'bars',
+          series: { 2: { type: 'line' } },
           animation: {
             startup: true,
             easing: 'out',
@@ -105,6 +107,11 @@ const Analysis = ({ user, transactions }) => {
       />
     </main>
   );
+};
+
+Analysis.propTypes = {
+  user: types.user.isRequired,
+  transactions: types.transactions.isRequired,
 };
 
 export default Analysis;

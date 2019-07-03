@@ -1,4 +1,5 @@
 import React from 'react';
+import * as types from 'types';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -71,6 +72,11 @@ const Account = ({ user, actions }) => {
 };
 
 export default Account;
+
+Account.propTypes = {
+  actions: types.actions.isRequired,
+  user: types.user.isRequired,
+};
 
 const useStyles = makeStyles(theme => ({
   paper: {

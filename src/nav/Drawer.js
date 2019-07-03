@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import MaterialDrawer from '@material-ui/core/Drawer';
@@ -8,7 +9,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import DrawerList from './DrawerList';
 import { DRAWER_WIDTH } from './constants';
 
-const Drawer = ({ isOpen, closeDrawer, setPage }) => {
+const Drawer = ({ isOpen, closeDrawer }) => {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -41,6 +42,11 @@ const Drawer = ({ isOpen, closeDrawer, setPage }) => {
 };
 
 export default Drawer;
+
+Drawer.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  closeDrawer: PropTypes.func.isRequired,
+};
 
 const useStyles = makeStyles(theme => ({
   drawer: {

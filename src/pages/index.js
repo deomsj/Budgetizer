@@ -1,4 +1,5 @@
 import React from 'react';
+import * as types from 'types';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Transactions from './Transactions';
 import Analysis from './Analysis.js';
@@ -28,3 +29,9 @@ const Main = props => {
 };
 
 export default Main;
+
+Main.propTypes = {
+  actions: types.actions.isRequired,
+  user: types.user,
+  transactions: types.transactions.isRequired,
+};

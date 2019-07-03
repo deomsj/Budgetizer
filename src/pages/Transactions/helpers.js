@@ -1,4 +1,4 @@
-import { getDateString } from '../../shared/helpers';
+import { getDateString } from 'shared/helpers';
 
 export const stableSort = (array, cmp) => {
   const stabilizedThis = array.map((el, index) => [el, index]);

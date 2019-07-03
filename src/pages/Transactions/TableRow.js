@@ -1,9 +1,10 @@
 import React from 'react';
+import * as types from 'types';
 import TableCell from '@material-ui/core/TableCell';
 import MaterialTableRow from '@material-ui/core/TableRow';
 import DeleteTransaction from './Modals/DeleteTransaction';
 import EditTransaction from './Modals/EditTransaction';
-import { getDateString } from '../../shared/helpers';
+import { getDateString } from 'shared/helpers';
 
 const TableRow = ({ row, actions }) => {
   const [selected, setSelected] = React.useState([]);
@@ -51,3 +52,8 @@ const TableRow = ({ row, actions }) => {
 };
 
 export default TableRow;
+
+TableRow.propTypes = {
+  row: types.transaction.isRequired,
+  actions: types.actions.isRequired,
+};

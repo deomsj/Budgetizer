@@ -1,4 +1,5 @@
 import React from 'react';
+import * as types from 'types';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,7 +11,7 @@ import { stableSort, getSorting, filterTransactionsBy } from './helpers';
 import TableHeader from './TableHeader';
 import TableToolbar from './TableToolbar';
 import TableRow from './TableRow';
-import { useTextInput } from '../../shared/TextInput';
+import { useTextInput } from 'shared/TextInput';
 
 const Transactions = ({ user, transactions, actions }) => {
   const classes = useStyles();
@@ -88,6 +89,12 @@ const Transactions = ({ user, transactions, actions }) => {
 };
 
 export default Transactions;
+
+Transactions.propTypes = {
+  actions: types.actions.isRequired,
+  user: types.user.isRequired,
+  transactions: types.transactions.isRequired,
+};
 
 const useStyles = makeStyles(theme => ({
   paper: {
