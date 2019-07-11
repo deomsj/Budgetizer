@@ -4,6 +4,10 @@
 
 This is a simple budgeting application to help users track they’re spending.
 
+- Deployed: [https://suspicious-brown-ba619c.netlify.com](https://suspicious-brown-ba619c.netlify.com)
+- Video: [https://youtu.be/SDdktuu4ZVY](https://youtu.be/SDdktuu4ZVY)
+- Mock data for bulk upload: [mock_transactions.csv](./mock_transactions.csv)
+
 ## Functionality
 
 The application will be able to:
@@ -79,7 +83,6 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
 
 ### Learn More
 
