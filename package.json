@@ -9,7 +9,7 @@
     "@material-ui/pickers": "^3.1.2",
     "clsx": "^1.0.4",
     "date-fns": "next",
-    "papaparse": "^5.0.0",
+    "papaparse": "^5.2.0",
     "react": "^16.8.6",
     "react-csv-reader": "^1.2.2",
     "react-dom": "^16.8.6",
